@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona główna</title>
+    <style>
+        /* Stylizacja dla h1 */
+        h1 {
+            position: absolute; /* Ustawienie pozycji absolutnej */
+            top: 50%; /* Ustawienie na 50% wysokości */
+            left: 50%; /* Ustawienie na 50% szerokości */
+            transform: translate(-50%, -1100%); /* Przesunięcie o połowę szerokości i wysokości */
+            margin: 0; /* Usunięcie domyślnych marginesów */
+        }
+
+        main {
+            font-size: 24px; /* Zmiana rozmiaru czcionki w elemencie main */
+            padding: 20px; /* Dodanie wypełnienia dla lepszego wyglądu */
+            text-align: center; /* Ustawienie tekstu z lewej strony */
+        }
+
+        p {
+            color: #ffffff; /* Kolor tekstu */
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Piłka nożna!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona Glowna</a></li>
+                <li><a href="about.html">Ulubiony Zawodnik</a></li>
+                <li><a href="contact.html">Inne pasje</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <img src="br.jpg" alt="Opis zdjęcia" width="200" height="200">
+        <h2></h2>
+        <p>Już od najmłodszych lat pasjonowałem się piłką nożną. Zawsze kochałem stać na bramce i być bramkarzem. Pełnienie tej roli dawało mi nie tylko radość, ale i satysfakcję z ochrony swojej drużyny oraz zatrzymywania strzałów przeciwników. Dzięki temu doświadczeniu zrozumiałem, jak istotną rolę może pełnić bramkarz w grze oraz jakie umiejętności i determinacja są potrzebne, by osiągnąć sukces na boisku.</p>
+    </main>
+
+    <footer>
+        <p id="currentDateTime">Piłka nożna to moja pasja!</p>
+    </footer>
+<script>
+    // Pobranie referencji do elementu, w którym ma być wyświetlana data i godzina
+    var currentDateTimeElement = document.getElementById('currentDateTime');
+
+    // Funkcja do aktualizacji daty i godziny co sekundę
+    function updateDateTime() {
+        var currentDate = new Date();
+
+        // Ustawienie formatu wyświetlania daty i godziny
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+
+        // Ustawienie tekstu na stronie
+        currentDateTimeElement.textContent = currentDate.toLocaleDateString('pl-PL', options);
+    }
+
+    // Wywołanie funkcji aktualizacji daty i godziny co sekundę
+    setInterval(updateDateTime, 1000);
+
+    // Wywołanie funkcji raz na początku, aby od razu wyświetlić aktualną datę i godzinę
+    updateDateTime();
+</script>
+</body>
+</html>
